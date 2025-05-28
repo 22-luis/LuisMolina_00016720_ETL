@@ -11,10 +11,29 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{8DB88568-7879-49D6-99C0-F0ECDCBA7892}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{28D05C90-F72B-4F9E-A471-B079912EB1A2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost,1433.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{401DB274-EC92-4930-94C4-D757F56A0513}"
+      DTS:ObjectName="localhost,1433.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost,1433;User ID=sa;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-Package-{401DB274-EC92-4930-94C4-D757F56A0513}localhost,1433.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA080Di5ZWm0W0ZddDGn7Q2wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADS+gv4H5SQoo0U9G1dICvLBPlpRDRdPC/yxd9eMfgwNQAAAAAOgAAAAAIAACAAAACwAH08x7OnSel39XyJQulpbm7yTuywIdFnsG9YMLnKsyAAAAAJqMDkM9FVfV1376rbX9BVdEWgrJgnfNN568yZMjIdWkAAAACZfE/ttxyJhbEVpiRzsc8hO6FnO9Mx1qW/6iMnmY0Qo1Y/Sf5DFFD+Q3agsD5mkQP+YCbctdCriWfQvvnyFHqS</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -179,6 +198,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost,1433.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost,1433.sa]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -261,26 +282,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="191.599997287989,50.3999986290932"
+              EndConnector="191.599997287989,50.3999986290929"
               Start="0,0"
-              End="191.599997287989,42.8999986290932">
+              End="191.599997287989,42.8999986290929">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.1999993145466" />
+                    End="0,21.1999993145464" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.1999993145466"
-                    Point2="0,25.1999993145466"
-                    Point3="4,25.1999993145466" />
+                    Point1="0,21.1999993145464"
+                    Point2="0,25.1999993145464"
+                    Point3="4,25.1999993145464" />
                   <mssgle:LineSegment
-                    End="187.599997287989,25.1999993145466" />
+                    End="187.599997287989,25.1999993145464" />
                   <mssgle:CubicBezierSegment
-                    Point1="187.599997287989,25.1999993145466"
-                    Point2="191.599997287989,25.1999993145466"
-                    Point3="191.599997287989,29.1999993145466" />
+                    Point1="187.599997287989,25.1999993145464"
+                    Point2="191.599997287989,25.1999993145464"
+                    Point3="191.599997287989,29.1999993145464" />
                   <mssgle:LineSegment
-                    End="191.599997287989,42.8999986290932" />
+                    End="191.599997287989,42.8999986290929" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -292,5 +313,18 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
